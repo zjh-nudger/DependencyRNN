@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DependencyTreeRnn
 Dependency tree-based RNN
 
@@ -79,3 +80,7 @@ You need to modify the path to where the JSON book files are stored.
 
 5. Additional parameters
   * **debug** (bool) Debugging level [default: false]
+=======
+# DependencyRNN
+froked based DependencyRNN
+>>>>>>> d4f8056f26ff9a0b6b16a075b02a3ac0dcde68e8
