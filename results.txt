@@ -1,0 +1,141 @@
+Sequential data, plain RNN:
+minimum 5 word occurrence
+V = 72846 words
+250 classes
+
+
+No n-gram connections
+BPTT(5) every 1 step
+50 hidden: 29.615385% (dev), 28.076923% (test)
+100 hidden: 30.0000% (dev), 30.0000% (test)
+200 hidden: 30.000000% (dev), 30.384615% (test)
+300 hidden: 30.576923% (dev), 28.461538% (test)
+
+
+1000MB of 2-gram connections
+BPTT(5) every 1 step
+50 hidden: 29.615385% (dev), 30.769231% (test)
+100 hidden: 28.653846% (dev), 30.384615% (test)
+200 hidden: 30.000000% (dev), 28.653846% (test)
+300 hidden: IN PROGRESS
+
+
+1000MB of 3-gram connections
+BPTT(5) every 1 step
+50 hidden: 39.2308% (dev), 40.769231% (test)
+100 hidden: 39.423077% (dev), 40.576923% (test)
+200 hidden: 38.846154% (dev), 40.192308% (test)
+300 hidden: IN PROGRESS
+
+
+1000MB of 4-gram connections
+BPTT(5) every 1 step
+50 hidden: 40.192308% (dev), 42.307692% (test)
+100 hidden: 40.576923% (dev), 41.153846% (test)
+200 hidden: 40.000000% (dev), 40.384615% (test)
+300 hidden: 40.192308% (dev), 39.230769% (test)
+
+
+1000MB of 5-gram connections
+BPTT(5) every 1 step
+50 hidden: 39.807692% (dev), 39.807692% (test)
+100 hidden: 39.423077% (dev), 39.615385% (test)
+200 hidden: TODO???
+300 hidden: TODO???
+
+
+1000MB of 3-gram connections
+BPTT(10) every 1 step
+100 hidden: 39.423077% (dev), 40.576923% (test)
+-> not interesting
+
+
+1000MB of 5-gram connections
+BPTT(10) every 1 step
+50 hidden: 39.807692% (dev), 39.807692% (test)
+-> not interesting
+
+
+2000MB of 3-gram connections
+BPTT(5) every 1 step
+100 hidden: 39.423077% (dev), 40.384615% (test)
+200 hidden: 39.423077% (dev), 40.384615% (test)
+-> run into memory problem all the time
+
+
+
+Dependency Tree RNN:
+minimum 5 word occurrence
+V = 67824 words, 44 labels
+250 classes
+
+labels as features (p2)
+1000MB of 3-gram connections
+BPTT_ORDER=5
+200 hidden: 50.576923% (dev), 50.000000% (test)
+
+labels as features (p2)
+2000MB of 4-gram connections
+BPTT_ORDER=5
+50 hidden
+gamma=0: 48.846154% (dev), 46.730769% (test)
+gamma=0.1: 47.115385% (dev), 48.269231% (test)
+gamma=0.5: 46.730769% (dev), 47.115385% (test)
+gamma=0.9: 47.307692% (dev), 46.730769% (test)
+gamma=1.0: 47.307692% (dev), 46.730769% (test)
+gamma=1.1: 48.076923% (dev), 45.576923% (test)
+
+labels as features (p2)
+2000MB of 4-gram connections
+BPTT_ORDER=5
+100 hidden
+gamma=0: TODO
+gamma=0.1: 49.807692% (dev), 49.807692% (test)
+gamma=0.5: 50.000000% (dev), 49.615385% (test)
+gamma=0.9: 49.230769% (dev), 47.500000% (test)
+gamma=1.0: 47.692308% (dev), 47.500000% (test)
+gamma=1.1: 48.653846% (dev), 48.076923% (test)
+
+labels as features (p2)
+2000MB of 3-gram connections
+BPTT_ORDER=5
+gamma=0.5
+50 hidden: 48.653846% (dev), 48.846154% (test)
+100 hidden: 51.538462% (dev), 49.615385% (test)
+200 hidden: 51.730769% (dev), 50.000000% (test)
+300 hidden: TODO 
+
+
+labels as features (p2)
+2000MB of 4-gram connections
+BPTT_ORDER=5
+gamma=0.5
+50 hidden: 46.730769% (dev), 47.115385% (test)
+100 hidden: 50.000000% (dev), 49.615385% (test)
+200 hidden: 49.807692% (dev), 49.615385% (test)
+ensemble of these: 526923076923% (dev), 0.517307692308 (test)
+300 hidden: IN PROGRESS
+
+no labels (p0)
+2000MB of 4-gram connections
+BPTT_ORDER=5
+50 hidden: 52.692308% (dev), 48.846154% (test)
+100 hidden: 54.038462% (dev), 51.346154% (test)
+200 hidden: 52.692308% (dev), 50.769231% (test)
+300 hidden: 
+
+no labels (p0)
+2000MB of 3-gram connections
+BPTT_ORDER=5
+50 hidden: 53.269231% (dev), 51.923077% (test)
+100 hidden: 54.230769% (dev), 52.692308% (test)
+200 hidden: 54.230769% (dev), 51.923077% (test)
+300 hidden: 53.269231% (dev), 52.884615% (test)
+
+no labels (p0)
+2000MB of 2-gram connections
+BPTT_ORDER=5
+50 hidden: 48.653846% (dev), 45.000000% (test)
+100 hidden: 48.653846% (dev), 47.500000% (test)
+200 hidden: 48.653846% (dev), 45.576923% (test)
+300 hidden: IN PROGRESS
